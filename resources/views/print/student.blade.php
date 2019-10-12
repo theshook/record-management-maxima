@@ -39,7 +39,7 @@
 								{{ $fb->fullname }}
 							</td>
 							<td>
-								{{ $fb->qualification }}
+								{{ $fb->qualification->course }}
 							</td>
 							<td>
 								{{ $fb->reference_number }}

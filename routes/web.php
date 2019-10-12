@@ -53,6 +53,8 @@ Route::any('student/search', 'StudentController@search')->name('student.search')
 Route::resource('assessor', 'AssessorController');
 
 Route::get('certificate', 'CertificateController@print_certificate_index')->name('print_certificate_index');
+Route::put('certificate/{requestCertificate}/update', 'CertificateController@updateIsPrinted')->name('cert.update');
+Route::get('certificate/multiple', 'CertificateController@printMultiple')->name('multiple.print');
 Route::any('certificate/search', 'CertificateController@print_certificate_search')->name('print_certificate_search');
 Route::get('certificate/{requestCertificate}/show', 'CertificateController@showCertificate')->name('cert.show');
 Route::get('certificate/{requestCertificate}/print', 'CertificateController@printCertificate')->name('cert.print');

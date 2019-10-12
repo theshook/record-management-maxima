@@ -41,4 +41,20 @@ class CertificateController extends Controller
     {
         return view('certificate.print')->with('requestCertificate', $requestCertificate);
     }
+
+    public function updateIsPrinted(RequestCertificate $requestCertificate)
+    {
+        $requestCertificate->update([
+            'isPrinted' => 1
+        ]);
+        session()->flash('success', 'Done printing for this student.');
+        return redirect(route('print_certificate_index'));
+    }
+
+    public function printMultiple(Request $request)
+    {
+        $ids = explode(',', $request->mydata);
+        $requestCertificate = RequestCertificate::whereIn('id', $ids)->get();
+        return view('certificate.multiple')->with('requestCertificate', $requestCertificate);;
+    }
 }

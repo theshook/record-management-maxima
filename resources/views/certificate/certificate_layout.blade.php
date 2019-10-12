@@ -7,6 +7,14 @@
 				<span class="float-md-right mt-1">
 					<button class="btn btn-success btn-sm" id="clickMe" >Print This</button>
 				</span>
+				<span class="float-md-right mt-1">
+					<form action="{{ route('cert.update', $requestCertificate->id)}}" method="POST">
+					@csrf
+					@method('PUT')
+					
+					<button class="btn btn-danger btn-sm text-white" id="clickMe" >Done Printing</button>
+					</form>
+				</span>
 				<h3 class="mb-0">
 					<span><img src="images/AdminBlue.png" style="width: 40px; text-align: center"></span>
 					PRINT CERTIFICATE
@@ -43,16 +51,32 @@
 						</table>
 						<div class="mx-auto text-center w-75 mt-2">
 							<h5>
+								@php
+									$dt = new DateTime();
+									$dt->setTimezone(new DateTimeZone('Asia/Manila'));
+								@endphp
 								<strong>
 									<em>
-										Conducted on June 7, 2019 to June 29, 2019 at Maxima Technical Skills Training Institute, Inc. Given this 29th day of June 2019 at Dagupan City, Pangasinan
+										Conducted on {{ date('F d, Y', strtotime($requestCertificate->created_at)) }}
+										 to {{ \Carbon\Carbon::now('+08:00')->format('F d, Y') }} at Maxima Technical Skills Training Institute, Inc. Given this {{ \Carbon\Carbon::now('+08:00')->format('jS') }} day of {{ \Carbon\Carbon::now('+08:00')->format('F Y') }} at Dagupan City, Pangasinan
 									</em>
 								</strong> 
 							</h5>
 						</div>
 					</div>
 					<h4 class="text-center">
-						Certificate No. CRY2019001
+						@php
+							$words = explode(" ", $requestCertificate->qualification->course);
+							$acronym = "";
+
+							foreach ($words as $w) {
+							$acronym .= $w[0];
+							}
+
+							$input = $requestCertificate->id;
+							$number = str_pad($input, 3, "0", STR_PAD_LEFT);
+						@endphp
+						Certificate No. {{ $acronym.\Carbon\Carbon::now('+08:00')->format('Y').$number}}
 					</h4>
 				</div>
 			</div>

@@ -4,11 +4,12 @@
     <div class="row">
         <div class="col-md-12">
 			<div class="text-primary">
-				{{-- <span class="float-md-right mt-1">
-					<a href="" class="btn btn-primary btn-sm">
-						PRINT ALL
-					</a>
-				</span> --}}
+				<span class="float-md-right mt-1">
+                    <form action="{{ route('multiple.print') }}" method="GET" id="formSave">
+                    @csrf
+						<button type="submit" class="btn btn-primary btn-sm" id="fetchSave">PRINT SELECTED</button>
+					</form>
+				</span>
 				<h3 class="mb-0">
 					<span><img src="images/AdminBlue.png" style="width: 40px; text-align: center"></span>
 					PRINT CERTIFICATE
@@ -40,6 +41,9 @@
                         @forelse ($students as $fb)
                             <tr>
                                 <td>
+                                    <input type="checkbox" name="certificate_ids[]" value="{{$fb->id}}">
+                                </td>
+                                <td>
                                     {{ $fb->fullname }}
                                 </td>
                                 <td>
@@ -69,4 +73,20 @@
 @endsection
 
 @section('scripts')
+<script>
+    $(document).ready(function(){
+        $("#fetchSave").click(function(e) {
+            e.preventDefault()
+            var val = [];
+            $(':checkbox:checked').each(function(i){
+            val[i] = $(this).val();
+            });
+            var input = $("<input>")
+               .attr("type", "hidden")
+               .attr("name", "mydata").val(val);
+            $("#formSave").append(input);
+            $("#formSave").submit();
+        });
+    });
+</script>
 @endsection
