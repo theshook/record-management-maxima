@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="text-primary">
                     <h3 class="mb-0">
-                        <span><img src="{{ asset('images/AssessmentLogo.png') }}" style="width: 25px; text-align: center"></span>
+                        <span><img src="{{ asset('images/CourseRegisteredBlue.png') }}" style="width: 25px; text-align: center"></span>
                         {{ $print->qualification->course  }} Core Competencies
                     </h3>
                     <hr class="bg-primary">

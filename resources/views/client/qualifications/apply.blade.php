@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="text-primary">
                     <h3 class="mb-0">
-                        <span><img src="{{ asset('images/AssessmentLogo.png') }}" style="width: 25px; text-align: center"></span>
+                        <span><img src="{{ asset('images/AssessmentLogoBlue.png') }}" style="width: 25px; text-align: center"></span>
                         APPLY FOR ASSESSMENT
                     </h3>
                     <hr class="bg-primary">
@@ -424,6 +424,9 @@ Pellentesque a risus ac metus volutpat semper. Mauris ornare sagittis magna vita
     <div class="modal-dialog modal-dialog-centered  modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
+                 <div class="text-center">
+					<img src="{{ asset('images/GreenCheck.png') }}" style="width: 100px; text-align: center">
+				</div>
                 <h5 class="modal-title text-center" id="refNoModalLabel">YOUR REQUEST FOR ASSESSMENT IS NOW SEND TO THE SERVER</h5>
                 <h3 class="text-center">REFERENCE NO.</h3>
                 <h3 class="text-center border rounded border-dark text-danger text-monospace" id="ref_no">
@@ -444,11 +447,11 @@ Pellentesque a risus ac metus volutpat semper. Mauris ornare sagittis magna vita
                     BPI Bank Account No. 2313 1599 1546
                 </p>
                 <div class="text-center">
-                    <img src="https://fakeimg.pl/75x75/000/" alt="Cebuana" class="rounded border border-warning">
-                    <img src="https://fakeimg.pl/75x75/000/" alt="M LHUILLER" class="rounded border border-warning">
-                    <img src="https://fakeimg.pl/75x75/000/" alt="PALAWAN" class="rounded border border-warning">
-                    <img src="https://fakeimg.pl/75x75/000/" alt="LBC" class="rounded border border-warning">
-                </div>
+					<img src="{{ asset('images/Cebuana.jpg') }}" style="width: 75px; text-align: center" alt="Cebuana" class="rounded border border-warning">
+					<img src="{{ asset('images/MLHU.jpg') }}" style="width: 75px; text-align: center" alt="M LHUILLER" class="rounded border border-warning">
+					<img src="{{ asset('images/Palawan.jpg') }}" style="width: 75px; text-align: center" alt="PALAWAN" class="rounded border border-warning">
+					<img src="{{ asset('images/LBC.jpg') }}" style="width: 75px; text-align: center" alt="LBC" class="rounded border border-warning">
+				</div>
             </div>
         </div>
     </div>

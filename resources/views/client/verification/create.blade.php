@@ -88,13 +88,17 @@
 			<div class="modal-body">
 				<h4 class="modal-title text-center" id="deleteModalLabel">Your Request is Now On Process</h4>
 				<br>
+				 <div class="text-center">
+					<img src="{{ asset('images/GreenCheck.png') }}" style="width: 100px; text-align: center">
+				</div>
 				<br>
-				<p class="text-center">
+				<h3 class="text-center">
 					NOTE: Please wait 5-7 Days process for the update.
-				</p>
-				<p class="text-center text-danger">
-					You will receive an automated SMS once your appointment is done
-				</p>
+				</h3>
+				<br>
+				<h4 class="text-center text-danger">
+					You will receive an automated SMS once your appointment is done.
+				</h4>
 			</div>
 		</div>
 	</div>

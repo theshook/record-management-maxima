@@ -41,7 +41,7 @@ class StudentController extends Controller
         Student::create($request->all());
 
         session()->flash('success', 'Student successfully added.');
-        return view('student.index');
+        return redirect(route('student.index'));
     }
 
     /**

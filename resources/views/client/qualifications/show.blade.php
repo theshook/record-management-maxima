@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="text-primary">
                     <h3 class="mb-0 text-uppercase">
-                        <span><img src="{{ asset('images/AssessmentLogo.png') }}" style="width: 25px; text-align: center"></span>
+                        <span><img src="{{ asset('images/AssessmentLogoBlue.png') }}" style="width: 25px; text-align: center"></span>
                         {{ $qualification->course }}
                     </h3>
                     <hr class="bg-primary">

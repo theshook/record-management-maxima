@@ -24,7 +24,7 @@
 
     <div id="app">
         
-    <img src="/images/Header.jpg" style="width: 100%">
+    <img src="{{ asset('images/AdminHeader.jpg') }}" style="width: 100%">
         <nav style="background: transparent url('{{ asset('images/Menu BG.jpg') }}') no-repeat fixed center/cover" class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container">
                 {{-- <a class="navbar-brand" href="{{ url('/') }}">

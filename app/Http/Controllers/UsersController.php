@@ -11,7 +11,7 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('director', ['only' => ['destroy', 'update']]);
+        $this->middleware('director', ['only' => ['create', 'edit', 'destroy', 'update']]);
     }
 
     /**

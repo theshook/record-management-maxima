@@ -5,7 +5,7 @@
         <div class="col-md-12">
 			<div class="text-primary">
 				<h3 class="mb-0">
-					<span><img src="images/AdminBlue.png" style="width: 40px; text-align: center"></span>
+					<span><img src="{{ asset('images/AdminBlue.png') }}" style="width: 40px; text-align: center"></span>
 					{{ isset($assessor) ? 'EDIT ASSESSOR' : 'ADD NEW ASSESSOR' }}
 				</h3>
 				<hr class="bg-primary">
@@ -28,7 +28,11 @@
 					<div class="col-md-4">
 						<select class="form-control" data-val="true" data-val-text="The qualification must be text." data-val-required="Please select Qualification" id="Qualification" name="qualification_id">
 							@foreach ($qualifications as $qualification)
-								<option value="{{ $qualification->id }}" {{$assessor->qualification_id == $qualification->id ? 'selected' : ''}}>{{ $qualification->course }}</option>
+								<option value="{{ $qualification->id }}" 
+								@if(isset($assessor))
+									{{$assessor->qualification_id == $qualification->id ? 'selected' : ''}}
+								@endif
+								>{{ $qualification->course }}</option>
 							@endforeach
 						</select>
 					</div>

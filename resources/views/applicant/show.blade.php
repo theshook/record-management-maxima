@@ -6,7 +6,7 @@
                 <div id="printMe">
 					<div class="text-dark">
 						<h3 class="mb-0">
-							<span><img src="{{ asset('images/AssessmentLogo.png') }}" style="width: 25px; text-align: center"></span>
+							<span><img src="{{ asset('images/AssessmentLogoBlue.png') }}" style="width: 25px; text-align: center"></span>
 							APPLY FOR ASSESSMENT
 						</h3>
 						<hr class="bg-dark">

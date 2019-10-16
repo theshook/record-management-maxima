@@ -10,7 +10,7 @@
                     </a>
                 </span>
 				<h3 class="mb-0">
-					<span><img src="images/AdminBlue.png" style="width: 40px; text-align: center"></span>
+					<span><img src="{{ asset('images/FeedbackBlue.png') }}" style="width: 40px; text-align: center"></span>
 					VERIFICATION REQUEST
 				</h3>
 				<hr class="bg-primary">
@@ -38,7 +38,7 @@
                         <img src="{{ $verification->image }}" alt="{{$verification->fullname}}" class="img-fluid">
                         <h6 class="float-md-right text-secondary">
                             <em>
-                                Contant #: {{ $verification->contact}}
+                                Contact #: {{ $verification->contact}}
                                 <br>
                                 Email: {{ $verification->email }}
                             </em>

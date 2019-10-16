@@ -50,6 +50,8 @@ Route::any('verification/search', 'VerificationController@search')->name('verifi
 Route::resource('request', 'RequestCertificateController');
 Route::resource('student', 'StudentController');
 Route::any('student/search', 'StudentController@search')->name('student.search');
+
+Route::any('assessor/search', 'AssessorController@search')->name('assessor.search');
 Route::resource('assessor', 'AssessorController');
 
 Route::get('certificate', 'CertificateController@print_certificate_index')->name('print_certificate_index');
@@ -76,3 +78,10 @@ Route::any('/print/coc/search/{qualification}', 'PrintCertificateController@sear
 //     Route::resource('categories', 'CategoryController');
 //     Route::resource('/news', 'NewsController');
 // });
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('route:cache');
+    Artisan::call('config:clear');
+    return "Cache is cleared";
+});

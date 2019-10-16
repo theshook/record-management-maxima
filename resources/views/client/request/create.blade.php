@@ -13,7 +13,7 @@
 		<div class="col-md-12">
 			<div class="text-primary">
 				<h3 class="mb-0">
-					<span><img src="images/CourseRegisteredBlue.png" style="width: 40px; text-align: center"></span>
+					<span><img src="{{ asset('images/CourseRegisteredBlue.png') }}" style="width: 40px; text-align: center"></span>
 					TRAINING CERTIFICATE REQUEST FORM
 				</h3>
 				<hr class="bg-primary">
@@ -86,28 +86,32 @@
 	</div>
 </div> 
 <!-- Modal -->
+
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-body">
-				<h5 class="modal-title text-center" id="deleteModalLabel">YOUR REQUEST FOR CERTIFICATE IS NOW SEND TO THE SERVER</h5>
-				<h3 class="text-center">REFERENCE NO.</h3>
+			    <div class="text-center">
+					<img src="{{ asset('images/GreenCheck.png') }}" style="width: 100px; text-align: center">
+				</div>
+				<h6 class="modal-title text-center" id="deleteModalLabel">YOUR REQUEST FOR CERTIFICATE IS NOW SEND TO THE SERVER</h6>
+				<h6 class="text-center">REFERENCE NO.</h6>
 				<h3 class="text-center border rounded border-dark text-danger text-monospace" id="ref_no"></h3>
 				<p class="text-center text-secondary">
 					NOTE: You have 24 hrs. to pay in any remittance center/bank said below. Don't forget to attach the receipt image and use the REFERENCE NO. for verification once you paid the amount
 				</p>
 				<h3 class="text-center text-secondary border rounded border-dark">
-					P 720.00
+					P 100.00
 				</h3>
 				<p class="text-center text-dark">
 					Account Name: Maxima Technical Skills and Training Institute Inc. 
 					BPI Bank Account No. 2313 1599 1546
 				</p>
 				<div class="text-center">
-					<img src="https://fakeimg.pl/75x75/000/" alt="Cebuana" class="rounded border border-warning">
-					<img src="https://fakeimg.pl/75x75/000/" alt="M LHUILLER" class="rounded border border-warning">
-					<img src="https://fakeimg.pl/75x75/000/" alt="PALAWAN" class="rounded border border-warning">
-					<img src="https://fakeimg.pl/75x75/000/" alt="LBC" class="rounded border border-warning">
+					<img src="{{ asset('images/Cebuana.jpg') }}" style="width: 75px; text-align: center" alt="Cebuana" class="rounded border border-warning">
+					<img src="{{ asset('images/MLHU.jpg') }}" style="width: 75px; text-align: center" alt="M LHUILLER" class="rounded border border-warning">
+					<img src="{{ asset('images/Palawan.jpg') }}" style="width: 75px; text-align: center" alt="PALAWAN" class="rounded border border-warning">
+					<img src="{{ asset('images/LBC.jpg') }}" style="width: 75px; text-align: center" alt="LBC" class="rounded border border-warning">
 				</div>
 			</div>
 		</div>
