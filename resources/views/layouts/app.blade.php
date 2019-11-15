@@ -25,7 +25,11 @@
     <div id="app">
         
     <img src="{{ asset('images/AdminHeader.jpg') }}" style="width: 100%">
+<<<<<<< HEAD
         <nav style="background: transparent url('{{ asset('images/Menu BG.jpg') }}') no-repeat fixed center/cover" class="navbar navbar-expand-md navbar-dark bg-primary">
+=======
+        <nav style="background: transparent url('{{ asset('images/Menu BG.jpg') }}') no-repeat fixed center/cover" class="navbar navbar-expand-md navbar-light bg-light">
+>>>>>>> 9bcc7af24e15f869bab6757e793aa378840d84cb
             <div class="container">
                 {{-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
