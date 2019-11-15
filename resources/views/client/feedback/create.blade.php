@@ -13,7 +13,7 @@
 		<div class="col-md-12">
 			<div class="text-primary">
 				<h3 class="mb-0">
-					<span><img src="{{ asset('images/Feedback.png') }}" style="width: 60px; text-align: center"></span>
+					<span><img src="{{ asset('images/FeedbackBlue.png') }}" style="width: 60px; text-align: center"></span>
 					CUSTOMER FEEDBACK AND CONCERNS
 				</h3>
 				<hr class="bg-primary">

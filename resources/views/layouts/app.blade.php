@@ -24,8 +24,8 @@
 
     <div id="app">
         
-    <img src="/images/Header.jpg" style="width: 100%">
-        <nav style="background: transparent url('{{ asset('images/Menu BG.jpg') }}') no-repeat fixed center/cover" class="navbar navbar-expand-md navbar-light bg-light">
+    <img src="{{ asset('images/AdminHeader.jpg') }}" style="width: 100%">
+        <nav style="background: transparent url('{{ asset('images/Menu BG.jpg') }}') no-repeat fixed center/cover" class="navbar navbar-expand-md navbar-dark bg-primary">
             <div class="container">
                 {{-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -43,14 +43,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/">
                                 <strong>
-                                    <font color="white" face="arial bold"><img src="{{ asset('images/HomeLogo.png') }}" style="width: 25px; text-align: center"> HOME </font>
+                                    <font color="white" face="arial bold"><img src="{{ asset('images/HomeLogo1.png') }}" style="width: 25px; text-align: center"> HOME </font>
                                 </strong>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="studentDropDown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <strong>
-                                    <img src="{{ asset('images/AssessmentLogo.png') }}" style="width: 25px; text-align: center">
+                                    <img src="{{ asset('images/AssessmentLogo1.png') }}" style="width: 25px; text-align: center">
                                     APPOINTMENT<span class="caret"></span>
                                 </strong>
                             </a>
@@ -85,7 +85,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('courseRegistered') }}">
                                 <strong>
-                                    <img src="{{ asset('images/CourseRegisteredLogo.png') }}" style="width: 18px">
+                                    <img src="{{ asset('images/CourseRegisteredLogo1.png') }}" style="width: 18px">
                                     COURSE REGISTERED
                                 </strong>
                             </a>
@@ -93,7 +93,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('feedback.create') }}">
                                 <strong>
-                                    <img src="{{ asset('images/Feedback.png') }}" style="width: 18px"> FEEDBACK
+                                    <img src="{{ asset('images/Feedback1.png') }}" style="width: 18px"> FEEDBACK
                                 </strong>
                             </a>
                         </li>
@@ -127,7 +127,7 @@
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="/login">
-                                    <font color="white" face="arial bold"><img src="{{ asset('images/RegisterLogo.png') }}" style="width: 18px"> LOGIN </font>
+                                    <font color="white" face="arial bold"><img src="{{ asset('images/RegisterLogo.png') }}" style="width: 25px"> LOGIN </font>
                                 </a>
                             </li>
                             {{-- @if (Route::has('register'))
@@ -139,14 +139,14 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('home') }}">
                                     <strong>
-                                        <img src="{{ asset('images/HomeLogo.png') }}" style="width: 25px; text-align: center"> HOME 
+                                        <img src="{{ asset('images/HomeLogo1.png') }}" style="width: 25px; text-align: center"> HOME 
                                     </strong>
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="studentDropDown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <strong>
-                                        <img src="{{ asset('images/RegisterLogo.png') }}" style="width: 25px; text-align: center">
+                                        <img src="{{ asset('images/RegisterLogo1.png') }}" style="width: 25px; text-align: center">
                                         REGISTER<span class="caret"></span>
                                     </strong>
                                 </a>
@@ -174,7 +174,7 @@
                             <li class="nav-item dropdown">
                                 <a id="studentDropDown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <strong>
-                                        <img src="{{ asset('images/CourseRegisteredLogo.png') }}" style="width: 25px; text-align: center">
+                                        <img src="{{ asset('images/CourseRegisteredLogo1.png') }}" style="width: 25px; text-align: center">
                                    CERTIFICATE<span class="caret"></span>
                                     </strong>
                                 </a>
@@ -202,7 +202,7 @@
                             <li class="nav-item dropdown">
                                 <a id="studentDropDown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <strong>
-                                        <img src="{{ asset('images/AssessmentLogo.png') }}" style="width: 25px; text-align: center">
+                                        <img src="{{ asset('images/AssessmentLogo1.png') }}" style="width: 25px; text-align: center">
                                         ASSESSMENT<span class="caret"></span>
                                     </strong>
                                 </a>
@@ -225,12 +225,18 @@
                                         PRINT STUDENT FORM
                                         </strong>
                                     </a>
+                                    <a class="dropdown-item text-white" href="{{ route('applicants.index') }}">
+                                        <strong>
+                                            <img src="{{ asset('images/AssessmentLogo.png') }}" style="width: 25px; text-align: center">
+                                        ASSESSMENT RESULT
+                                        </strong>
+                                    </a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="feedback" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <strong>
-                                        <img src="{{ asset('images/Feedback.png') }}" style="width: 25px; text-align: center">
+                                        <img src="{{ asset('images/Feedback1.png') }}" style="width: 25px; text-align: center">
                                         OTHERS
                                     </strong>
                                 </a>

@@ -10,7 +10,7 @@
                     </a>
                 </span>
 				<h3 class="mb-0">
-					<span><img src="images/AdminBlue.png" style="width: 40px; text-align: center"></span>
+					<span><img src="{{ asset('images/FeedbackBlue.png') }}" style="width: 40px; text-align: center"></span>
 					FEED BACK AND CONCERNS
 				</h3>
 				<hr class="bg-primary">

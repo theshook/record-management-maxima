@@ -43,7 +43,7 @@ class AssessorController extends Controller
 
         session()->flash('success', 'Assessor has been successfully added.');
 
-        return view('assessor.index');
+        return redirect(route('assessor.index'));
     }
 
     /**
@@ -98,5 +98,23 @@ class AssessorController extends Controller
         session()->flash('success', 'Assessor has been removed successfully.');
 
         return redirect(route('assessor.index'));
+    }
+
+    public function search(Request $request)
+    {
+        $q = $request->q;
+        if ($q != "") {
+            $assessors = Assessor::where('last_name', 'LIKE', $q . '%')
+                ->orWhere('first_name', 'LIKE', $q . '%')
+                ->orderBy('last_name', 'asc')
+                ->paginate(5)->setPath('');
+            $pagination = $assessors->appends(array(
+                'q' => $request->q
+            ));
+            if (count($assessors) > 0)
+                return view('assessor.index')->withAssessors($assessors)->withQuery($q);
+        }
+        $assessors = Assessor::orderBy('created_at', 'desc')->paginate(5);
+        return view('assessor.index')->withAssessors($assessors)->withMessage('No Details found. Try to search again !');
     }
 }

@@ -31,7 +31,7 @@ class CreateNewsRequest extends FormRequest
         return [
             'title' => $title,
             'description' => 'required',
-            'image' => 'image'
+            'image' => 'image|required'
         ];
     }
 }

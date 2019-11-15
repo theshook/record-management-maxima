@@ -8,7 +8,7 @@
 					<button class="btn btn-success btn-sm" id="clickMe" >Print This</button>
 				</span>
 				<h3 class="mb-0">
-					<span><img src="images/AdminBlue.png" style="width: 40px; text-align: center"></span>
+					<span><img src="{{ asset('images/CourseRegisteredBlue.png') }}" style="width: 40px; text-align: center"></span>
 					PRINT CERTIFICATE
 				</h3>
 				<hr class="bg-primary">

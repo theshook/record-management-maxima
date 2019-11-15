@@ -10,7 +10,7 @@
                     </a>
                 </span>
 				<h3 class="mb-0">
-					<span><img src="images/AdminBlue.png" style="width: 40px; text-align: center"></span>
+					<span><img src="{{ asset('images/FeedbackBlue.png') }}" style="width: 40px; text-align: center"></span>
 					VERIFICATION REQUEST
 				</h3>
 				<hr class="bg-primary">
@@ -30,15 +30,15 @@
                                 {{ $verification->fullname}}
                             </span>
                         </h4>
-                        <h4>Reference/Tracking Number: 
+                        <h4>Reference Number: 
                             <span class="text-danger">
                                 {{ $verification->tracking_number}}
                             </span>
                         </h4>
-                        <img src="{{ $verification->image }}" alt="{{$verification->fullname}}" class="img-fluid">
+                        <img src="{{ asset('storage/'.$verification->image) }}" alt="{{$verification->fullname}}" class="img-fluid" height="300px" width="300px">
                         <h6 class="float-md-right text-secondary">
                             <em>
-                                Contant #: {{ $verification->contact}}
+                                Contact #: {{ $verification->contact}}
                                 <br>
                                 Email: {{ $verification->email }}
                             </em>

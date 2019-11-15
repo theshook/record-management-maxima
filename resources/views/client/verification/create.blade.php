@@ -33,10 +33,10 @@
 
 				<div class="form-group row">
 					<label for="training_center" class="col-md-4 col-form-label text-primary">
-						Control or Tracking Number:
+						Reference Number:
 					</label>
 					<div class="col-md-8">
-						<input type="text" id="tracking_number" class="form-control" name="tracking_number" placeholder="Tracking or Control Number of your Receipt" autofocus>
+						<input type="text" id="tracking_number" class="form-control" name="tracking_number" placeholder="Write your reference number" autofocus>
 					</div>
 				</div>
 
@@ -50,16 +50,15 @@
 				</div>
 				
 				<div class="form-group row">
-					<div class="input-group mb-3">
-						<label for="training_center" class="col-md-4 col-form-label text-primary">
+						<label for="image" class="col-md-4 col-form-label text-primary">
 							Attach your Receipt Image:
-							</label>
+					    </label>
+					<div class="col-md-8">
 						<div class="custom-file">
-								
 							<input type="file" accept="image/x-png,image/gif,image/jpeg" class="custom-file-input" id="image" aria-describedby="inputGroupFileAddon01" name="image">
 							<label class="custom-file-label" for="image">
 									Attach you Receipt Image here...
-								</label>
+							</label>
 						</div>
 					</div>
 				</div>
@@ -88,13 +87,17 @@
 			<div class="modal-body">
 				<h4 class="modal-title text-center" id="deleteModalLabel">Your Request is Now On Process</h4>
 				<br>
+				 <div class="text-center">
+					<img src="{{ asset('images/GreenCheck.png') }}" style="width: 100px; text-align: center">
+				</div>
 				<br>
-				<p class="text-center">
+				<h3 class="text-center">
 					NOTE: Please wait 5-7 Days process for the update.
-				</p>
-				<p class="text-center text-danger">
-					You will receive an automated SMS once your appointment is done
-				</p>
+				</h3>
+				<br>
+				<h4 class="text-center text-danger">
+					You will receive an automated SMS once your appointment is done.
+				</h4>
 			</div>
 		</div>
 	</div>

@@ -47,7 +47,7 @@ class VerificationController extends Controller
             'contact' => $request->contact,
             'image' => $image,
         ]);
-        session()->flash('success', 'Category created successfully.');
+        session()->flash('success', 'Verification Request Successfully Sent!');
 
         return redirect(route('verification.create'))->with('titleMessage', 'Your Request is Now On Process')->with('message', 'NOTE: Please wait 5-7 Days process for the update. You will receive an automated SMS once your appointment is done');
     }

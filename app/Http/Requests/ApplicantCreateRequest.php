@@ -45,8 +45,8 @@ class ApplicantCreateRequest extends FormRequest
             'title_assessment' => 'required',
             'assessment_type' => 'required',
             'civil_status' => 'required',
-            'hea' => 'required',
-            'es' => 'required',
+            // 'hea' => 'required',
+            // 'es' => 'required',
         ];
     }
 }

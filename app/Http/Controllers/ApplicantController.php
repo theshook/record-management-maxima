@@ -170,6 +170,31 @@ class ApplicantController extends Controller
             session()->flash('price', '900');
         }
 
+        if (!empty($request->mobile)) {
+            $message = 'Good day! This is from Maxima Technical And Skills Training Institute, Inc. We would like to inform you that you need to settle your payment within 24hrs, otherwise you\'ll be in our black list for 3 days. Your reference number is ' . $ref_no . ' Thank you!';
+            $ch = curl_init();
+            $parameters = array(
+                'apikey' => '742afa72f86bb473bddb4aacc652190d', //Your API KEY
+                'number' => $request->mobile,
+                'message' => $message,
+                'sendername' => ''
+            );
+
+            /*
+            ##            FOR DISAPPROVED. TODO                                  
+            */
+            curl_setopt($ch, CURLOPT_URL, 'https://semaphore.co/api/v4/messages');
+            curl_setopt($ch, CURLOPT_POST, 1);
+
+            //Send the parameters set above with the request
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($parameters));
+
+            // Receive response from server
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $output = curl_exec($ch);
+            curl_close($ch);
+        }
+
         session()->flash('success', 'Application successfully sent!');
         session()->flash('ref_no', $ref_no);
         return redirect(route('applicants.create'))->with('ref_no', $ref_no);

@@ -42,7 +42,16 @@ class Applicant extends Model
         return $this->hasMany(StudentList::class, 'student_id');
     }
 
-    public function getLists($scheduled, $assessor_id)
+    public function getLists($scheduled, $assessor)
+    {
+        return $this->join('student_lists', 'student_lists.student_id', '=', 'applicants.id')
+            ->where('assessor_id', $assessor->id)
+            ->where('scheduled', $scheduled)
+            ->orderBy('last_name', 'asc')
+            ->paginate(5);
+    }
+
+    public function applicants($scheduled, $assessor_id)
     {
         return $this->where('qualification_id', $assessor_id)
             ->where('scheduled', $scheduled)

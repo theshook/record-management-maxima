@@ -15,11 +15,11 @@
 				</h3>
 				<hr class="bg-primary">
 
-				<form action="{{ route('applicants.search') }}" method="POST" role="search" class="p-3 bg-primary">
+				<form action="{{ route('assessor.search') }}" method="POST" role="search" class="p-3 bg-primary">
 					{{ csrf_field() }}
 					<div class="input-group w-50">
 						<input type="text" class="form-control" name="q"
-							placeholder="Search Names or Tracking Number"> 
+							placeholder="Search Names"> 
 							
 						<span class="input-group-btn">
 							<button type="submit" class="btn btn-default">

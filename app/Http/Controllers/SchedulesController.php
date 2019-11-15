@@ -66,10 +66,15 @@ class SchedulesController extends Controller
     public function show(Schedule $schedule, Assessor $assessor)
     {
         $app = new Applicant();
-        $applicants = $app->getLists(0, $assessor->qualification_id);
-        $students = $app->getLists(1, $assessor->qualification_id);
+        $applicants = $app->applicants(0, $assessor->qualification_id);
+        $students = $app->getLists(1, $assessor);
+
         if (Auth::user()) {
-            return view('schedules.show')->withSchedule($schedule)->withAssessor($assessor)->withApplicants($applicants)->withStudents($students);
+            return view('schedules.show')
+                ->withSchedule($schedule)
+                ->withAssessor($assessor)
+                ->withApplicants($applicants)
+                ->withStudents($students);
         } else {
             return view('client.qualifications.show_list')->withSchedule($schedule)->withAssessor($assessor)->withApplicants($applicants)->withStudents($students);
         }
@@ -104,9 +109,9 @@ class SchedulesController extends Controller
             ->toArray();
 
         if ($request->status == 'approved') {
-            $message = 'Good day! This is from Maxima Technical And Skills Training Institute, Inc. We would glad to inform you that you are scheduled to take our assessment, this coming ' . $date . '. This is an automated text message do not reply!';
+            $message = 'Good day! This is from Maxima Technical And Skills Training Institute, Inc. We would glad to inform you that you are scheduled to take our assessment, this coming ' . $date . '. 8:00AM. This is an automated text message please do not reply Thank you!';
         } else if ($request->status == 'not yet approved') {
-            $message = 'Good day! This is from Maxima Technical And Skills Training Institute, Inc. We would like to inform you that your schedule has resched please wait for update . This is an automated text message do not reply!';
+            $message = 'Good day! This is from Maxima Technical And Skills Training Institute, Inc. We would like to inform you that your schedule has been resched please wait for further updates. This is an automated text message do not reply!';
         }
 
         $schedule->update([
@@ -115,10 +120,10 @@ class SchedulesController extends Controller
 
         $ch = curl_init();
         $parameters = array(
-            'apikey' => env('SEMAPHORE_KEY'), //Your API KEY
+            'apikey' => '742afa72f86bb473bddb4aacc652190d', //Your API KEY
             'number' => implode(",", $applicants),
             'message' => $message,
-            'sendername' => env('SEMAPHORE_FROM_NAME', '')
+            'sendername' => ''
         );
 
         /*
@@ -152,9 +157,12 @@ class SchedulesController extends Controller
 
     public function search(Request $request, Schedule $schedule, Assessor $assessor)
     {
+        $app = new Applicant();
+        $students = $app->getLists(1, $assessor->qualification_id);
         $q = $request->q;
         if ($q != "") {
             $applicants = Applicant::where('qualification_id', $assessor->qualification->id)
+                ->where('scheduled', 0)
                 ->where(function ($query) use ($q) {
                     $query->where('last_name', 'LIKE', '%' . $q . '%')
                         ->orWhere('first_name', 'LIKE', '%' . $q . '%');
@@ -164,13 +172,13 @@ class SchedulesController extends Controller
                 'q' => $request->q
             ));
             if (count($applicants) > 0)
-                return view('schedules.show')->withSchedule($schedule)->withAssessor($assessor)->withApplicants($applicants)->withQuery($q);
+                return view('schedules.show')->withStudents($students)->withSchedule($schedule)->withAssessor($assessor)->withApplicants($applicants)->withQuery($q);
         }
         $applicants = Applicant::where('qualification_id', $assessor->qualification->id)
             ->where('scheduled', 0)
             ->orderBy('last_name', 'asc')
             ->paginate(5);
-        return view('schedules.show')->withSchedule($schedule)->withAssessor($assessor)->withApplicants($applicants)->withMessage('No Details found. Try to search again !');
+        return view('schedules.show')->withStudents($students)->withSchedule($schedule)->withAssessor($assessor)->withApplicants($applicants)->withMessage('No Details found. Try to search again !');
     }
 
     public function addStudents(Request $request)

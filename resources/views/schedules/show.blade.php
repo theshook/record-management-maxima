@@ -26,7 +26,7 @@
 					</span>
 				</form>
 				<h3 class="mb-0 text-uppercase">
-					<span><img src="images/AdminBlue.png" style="width: 40px; text-align: center"></span>
+					<span><img src="{{ asset('images/AssessmentLogoBlue.png') }}" style="width: 40px; text-align: center"></span>
 					{{ $assessor->qualification->course }}
 				</h3>
 				<hr class="bg-primary">
