@@ -80,13 +80,9 @@ Route::any('/print/coc/search/{qualification}', 'PrintCertificateController@sear
 //     Route::resource('/news', 'NewsController');
 // });
 
-<<<<<<< HEAD
 Route::resource('/results', 'ResultsController');
 
-Route::get('/clear-cache', function () {
-=======
 Route::get('/clear-cache', function() {
->>>>>>> 9bcc7af24e15f869bab6757e793aa378840d84cb
     Artisan::call('cache:clear');
     Artisan::call('route:cache');
     Artisan::call('config:clear');
