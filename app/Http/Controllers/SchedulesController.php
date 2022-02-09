@@ -120,7 +120,7 @@ class SchedulesController extends Controller
 
         $ch = curl_init();
         $parameters = array(
-            'apikey' => '742afa72f86bb473bddb4aacc652190d', //Your API KEY
+            'apikey' => 'YOUR_API_KEY', //Your API KEY
             'number' => implode(",", $applicants),
             'message' => $message,
             'sendername' => ''
