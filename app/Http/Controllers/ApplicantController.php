@@ -174,7 +174,7 @@ class ApplicantController extends Controller
             $message = 'Good day! This is from Maxima Technical And Skills Training Institute, Inc. We would like to inform you that you need to settle your payment within 24hrs, otherwise you\'ll be in our black list for 3 days. Your reference number is ' . $ref_no . ' Thank you!';
             $ch = curl_init();
             $parameters = array(
-                'apikey' => '742afa72f86bb473bddb4aacc652190d', //Your API KEY
+                'apikey' => 'YOUR_API_KEY', //Your API KEY
                 'number' => $request->mobile,
                 'message' => $message,
                 'sendername' => ''
